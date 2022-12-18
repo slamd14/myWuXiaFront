@@ -1,0 +1,85 @@
+/* TODO: 我觉得这个left和right不应该定高度，而应该由内容去撑开 ---> 又觉得没必要，分页拆寻即可 */
+
+.left {
+    float: left;
+    width: 150px;
+    height: 1100px;
+    border: 3px solid black;
+    border-bottom: 0;
+}
+
+.right {
+    position: relative;
+    float: right;
+    width: 1753px;
+    height: 1100px;
+}
+
+.right .foot {
+    position: absolute;
+    bottom: 0;
+    width: 1753px;
+    height: 80px;
+    background-color: #cccccc;
+}
+
+.right .foot .content {
+    text-align: center;
+    line-height: 80px;
+}
+
+.right h2 {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.right ul li {
+    float: left;
+    margin-left: 40px;
+    margin-top: 35px;
+    width: 280px;
+    height: 410px;
+    border: 3px solid black;
+    box-shadow: 5px 5px 5px black;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.right ul li a {
+    display: inline-block;
+    width: 100%;
+    height: 330px;
+}
+
+.right ul li .bookName {
+    margin-top: 8px;
+    text-align: center;
+}
+
+.right ul li .author {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.left .authorNavi {
+    width: 100%;
+    height: 64px;
+    background-color: rgba(204, 204, 204, 0.35);
+    text-align: center;
+    line-height: 64px;
+}
+
+.left ul li {
+    width: 100%;
+    height: 60px;
+    background-color: rgba(204, 204, 204, 0.35);
+    border-top: 1px solid black;
+    text-align: center;
+    line-height: 60px;
+}
+
+.left ul li a {
+    display: inline-block;
+    width: 100%;
+    height: 60px;
+}
