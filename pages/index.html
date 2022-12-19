@@ -11,7 +11,16 @@
   <link rel="stylesheet" href="../css/index.css">
   <link rel="stylesheet" href="../plugins/elementui/index.css">
   <link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css">
-
+  <style>
+      .el-dropdown-link {
+          cursor: pointer;
+          color: #409EFF;
+      }
+      .dropdown-menu li:hover{
+          background-color: #cccccc !important;
+          color: black !important;
+      }
+  </style>
 </head>
 <body>
   <div id="app">
@@ -19,137 +28,58 @@
     <div class="websiteTitle">
       <h1 class="head">飞雪连天射白鹿，笑书神侠倚碧鸳</h1>
       <div class="person">
-        <img src="../images/25231.png" alt="" width="60px">
         <!-- TODO 个人中心下拉菜单 -->
+        <div class="selectBox">
+          <el-dropdown trigger="click">
+            <span class="el-dropdown-link">
+              <img src="../images/25231.png" alt="头像" width="50px" height="50px">
+            </span>
+            <el-dropdown-menu class="dropdown-menu" slot="dropdown">
+              <el-dropdown-item>个人中心</el-dropdown-item>
+              <el-dropdown-item>消息列表</el-dropdown-item>
+              <el-dropdown-item>关注列表</el-dropdown-item>
+              <el-dropdown-item>退出登录</el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
+        </div>
       </div>
     </div>
 
     <!-- 主页左侧栏 -->
     <div class="left">
-      <div class="authorNavi">作家栏</div>
+      <div class="authorNavi">
+        <button type="button" @click="currentFrame='./frame1.html'">
+          作家栏
+        </button>
+      </div>
       <ul>
         <li>
-          <a href="#">
+          <button type="button" @click="currentFrame='./frame2.html'">
             金庸
-          </a>
+          </button>
         </li>
         <li>
-          <a href="#">
+          <button type="button" @click="currentFrame='./frame3.html'">
             古龙
-          </a>
+          </button>
         </li>
         <li>
-          <a href="#">
+          <button type="button" @click="currentFrame='./frame4.html'">
             温瑞安
-          </a>
+          </button>
         </li>
         <li>
-          <a href="#">
+          <button type="button" @click="currentFrame='./frame5.html'">
             梁羽生
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            金庸
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            金庸
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            金庸
-          </a>
+          </button>
         </li>
       </ul>
     </div>
 
     <!-- 主页右侧栏 -->
     <div class="right">
-      <!-- 书籍 -->
-      <h2>推荐小说</h2>
-      <ul>
-        <li>
-          <a href="#">
-            <img src="../images/雪山飞狐.jpg" alt="雪山飞狐" height="330px" width="275px">
-          </a>
-          <div class="bookName">&lt;&lt;雪山飞狐&gt;&gt;</div>
-          <div class="author">金庸</div>
-        </li>
-        <li>
-          <a href="#">
-            书籍图片
-          </a>
-          <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-          <div class="author">金庸</div>
-        </li>
-        <li>
-          <a href="#">
-            书籍图片
-          </a>
-          <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-          <div class="author">金庸</div>
-        </li>
-        <li>
-          <a href="#">
-            书籍图片
-          </a>
-          <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-          <div class="author">金庸</div>
-        </li>
-        <li>
-          <a href="#">
-            书籍图片
-          </a>
-          <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-          <div class="author">金庸</div>
-        </li>
-        <li>
-          <a href="#">
-            书籍图片
-          </a>
-          <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-          <div class="author">金庸</div>
-        </li>
-        <li>
-          <a href="#">
-            书籍图片
-          </a>
-          <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-          <div class="author">金庸</div>
-        </li>
-        <li>
-          <a href="#">
-            书籍图片
-          </a>
-          <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-          <div class="author">金庸</div>
-        </li>
-        <li>
-          <a href="#">
-            书籍图片
-          </a>
-          <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-          <div class="author">金庸</div>
-        </li>
-        <li>
-          <a href="#">
-            书籍图片
-          </a>
-          <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-          <div class="author">金庸</div>
-        </li>
-      </ul>
-      <!-- 主页底栏 -->
-      <div class="foot">
-        <div class="content">联系网站作者: slamd14...@...com</div>
-      </div>
+      <iframe :src=currentFrame class="rightFrame" scrolling="no"></iframe>
     </div>
-
-
-
   </div>
 </body>
 
@@ -159,7 +89,7 @@
   new Vue({
       el: '#app',
       data: {
-
+        currentFrame: './frame1.html',
       },
       methods: {
 
