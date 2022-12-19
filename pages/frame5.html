@@ -13,78 +13,17 @@
 <div id="app">
   <!-- 书籍 -->
   <h2>梁羽生小说</h2>
-  <ul class="clearfix bookList">
-    <li>
-      <a href="#">
-        <img src="../images/七剑下天山.jpg" alt="七剑下天山" height="330px" width="275px">
-      </a>
-      <div class="bookName">&lt;&lt;七剑下天山&gt;&gt;</div>
-      <div class="author">梁羽生</div>
-    </li>
-    <li>
-      <a href="#">
-        书籍图片
-      </a>
-      <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-      <div class="author">金庸</div>
-    </li>
-    <li>
-      <a href="#">
-        书籍图片
-      </a>
-      <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-      <div class="author">金庸</div>
-    </li>
-    <li>
-      <a href="#">
-        书籍图片
-      </a>
-      <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-      <div class="author">金庸</div>
-    </li>
-    <li>
-      <a href="#">
-        书籍图片
-      </a>
-      <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-      <div class="author">金庸</div>
-    </li>
-    <li>
-      <a href="#">
-        书籍图片
-      </a>
-      <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-      <div class="author">金庸</div>
-    </li>
-    <li>
-      <a href="#">
-        书籍图片
-      </a>
-      <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-      <div class="author">金庸</div>
-    </li>
-    <li>
-      <a href="#">
-        书籍图片
-      </a>
-      <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-      <div class="author">金庸</div>
-    </li>
-    <li>
-      <a href="#">
-        书籍图片
-      </a>
-      <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-      <div class="author">金庸</div>
-    </li>
-    <li>
-      <a href="#">
-        书籍图片
-      </a>
-      <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-      <div class="author">金庸</div>
-    </li>
-  </ul>
+  <div class="fixBug clearfix">
+    <ul class="clearfix bookList" v-for="book in bookList">
+      <li>
+        <a href="#">
+          <img :src="book.imgSrc" alt="七剑下天山" height="330px" width="275px">
+        </a>
+        <div class="bookName">&lt;&lt;{{book.bookName}}&gt;&gt;</div>
+        <div class="author">{{book.bookName}}</div>
+      </li>
+    </ul>
+  </div>
   <!-- 分页查询 -->
   <div class="block">
     <el-pagination
@@ -110,6 +49,58 @@
         el: '#app',
         data: {
             currentPage: 1,
+            bookList: [
+                {
+                    imgSrc: '../images/七剑下天山.jpg',
+                    bookName: '七剑下天山',
+                    author: '梁羽生'
+                },
+                {
+                    imgSrc: '../images/七剑下天山.jpg',
+                    bookName: '七剑下天山',
+                    author: '梁羽生'
+                },
+                {
+                    imgSrc: '../images/七剑下天山.jpg',
+                    bookName: '七剑下天山',
+                    author: '梁羽生'
+                },
+                {
+                    imgSrc: '../images/七剑下天山.jpg',
+                    bookName: '七剑下天山',
+                    author: '梁羽生'
+                },
+                {
+                    imgSrc: '../images/七剑下天山.jpg',
+                    bookName: '七剑下天山',
+                    author: '梁羽生'
+                },
+                {
+                    imgSrc: '../images/七剑下天山.jpg',
+                    bookName: '七剑下天山',
+                    author: '梁羽生'
+                },
+                {
+                    imgSrc: '../images/七剑下天山.jpg',
+                    bookName: '七剑下天山',
+                    author: '梁羽生'
+                },
+                {
+                    imgSrc: '../images/七剑下天山.jpg',
+                    bookName: '七剑下天山',
+                    author: '梁羽生'
+                },
+                {
+                    imgSrc: '../images/七剑下天山.jpg',
+                    bookName: '七剑下天山',
+                    author: '梁羽生'
+                },
+                {
+                    imgSrc: '../images/七剑下天山.jpg',
+                    bookName: '七剑下天山',
+                    author: '梁羽生'
+                },
+            ]
         },
         methods: {
             handleSizeChange(val) {

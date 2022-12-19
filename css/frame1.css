@@ -20,8 +20,11 @@ h2 {
     text-align: center;
 }
 
-.bookList li {
+.bookList {
     float: left;
+}
+
+.bookList li {
     margin-left: 40px;
     margin-top: 35px;
     width: 280px;

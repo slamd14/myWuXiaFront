@@ -13,78 +13,17 @@
 <div id="app">
   <!-- 书籍 -->
   <h2>金庸小说</h2>
-  <ul class="clearfix bookList">
-    <li>
-      <a href="#">
-        <img src="../images/雪山飞狐.jpg" alt="雪山飞狐" height="330px" width="275px">
-      </a>
-      <div class="bookName">&lt;&lt;雪山飞狐&gt;&gt;</div>
-      <div class="author">金庸</div>
-    </li>
-    <li>
-      <a href="#">
-        书籍图片
-      </a>
-      <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-      <div class="author">金庸</div>
-    </li>
-    <li>
-      <a href="#">
-        书籍图片
-      </a>
-      <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-      <div class="author">金庸</div>
-    </li>
-    <li>
-      <a href="#">
-        书籍图片
-      </a>
-      <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-      <div class="author">金庸</div>
-    </li>
-    <li>
-      <a href="#">
-        书籍图片
-      </a>
-      <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-      <div class="author">金庸</div>
-    </li>
-    <li>
-      <a href="#">
-        书籍图片
-      </a>
-      <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-      <div class="author">金庸</div>
-    </li>
-    <li>
-      <a href="#">
-        书籍图片
-      </a>
-      <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-      <div class="author">金庸</div>
-    </li>
-    <li>
-      <a href="#">
-        书籍图片
-      </a>
-      <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-      <div class="author">金庸</div>
-    </li>
-    <li>
-      <a href="#">
-        书籍图片
-      </a>
-      <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-      <div class="author">金庸</div>
-    </li>
-    <li>
-      <a href="#">
-        书籍图片
-      </a>
-      <div class="bookName">&lt;&lt;倚天屠龙记(三联版)&gt;&gt;</div>
-      <div class="author">金庸</div>
-    </li>
-  </ul>
+  <div class="fixBug clearfix">
+    <ul class="clearfix bookList" v-for="book in bookList">
+      <li>
+        <a href="bookNavi.html?id=1">
+          <img :src="book.imgSrc" alt="雪山飞狐" height="330px" width="275px">
+        </a>
+        <div class="bookName">&lt;&lt;{{book.bookName}}&gt;&gt;</div>
+        <div class="author">{{book.bookName}}</div>
+      </li>
+    </ul>
+  </div>
   <!-- 分页查询 -->
   <div class="block">
     <el-pagination
@@ -110,6 +49,57 @@
         el: '#app',
         data: {
             currentPage: 1,
+            bookList: [
+                {
+                    imgSrc: '../images/雪山飞狐.jpg',
+                    bookName: '雪山飞狐',
+                    author: '金庸'
+                },
+                {
+                    imgSrc: '../images/雪山飞狐.jpg',
+                    bookName: '雪山飞狐',
+                    author: '金庸'
+                },
+                {
+                    imgSrc: '../images/雪山飞狐.jpg',
+                    bookName: '雪山飞狐',
+                    author: '金庸'
+                },
+                {
+                    imgSrc: '../images/雪山飞狐.jpg',
+                    bookName: '雪山飞狐',
+                    author: '金庸'
+                },
+                {
+                    imgSrc: '../images/雪山飞狐.jpg',
+                    bookName: '雪山飞狐',
+                    author: '金庸'
+                },{
+                    imgSrc: '../images/雪山飞狐.jpg',
+                    bookName: '雪山飞狐',
+                    author: '金庸'
+                },
+                {
+                    imgSrc: '../images/雪山飞狐.jpg',
+                    bookName: '雪山飞狐',
+                    author: '金庸'
+                },
+                {
+                    imgSrc: '../images/雪山飞狐.jpg',
+                    bookName: '雪山飞狐',
+                    author: '金庸'
+                },
+                {
+                    imgSrc: '../images/雪山飞狐.jpg',
+                    bookName: '雪山飞狐',
+                    author: '金庸'
+                },
+                {
+                    imgSrc: '../images/雪山飞狐.jpg',
+                    bookName: '雪山飞狐',
+                    author: '金庸'
+                }
+            ]
         },
         methods: {
             handleSizeChange(val) {
